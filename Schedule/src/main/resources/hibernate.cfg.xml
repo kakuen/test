@@ -19,6 +19,10 @@
 	     
 	    <!-- Entity classes --> 
         <mapping class="jp.co.fitec.lesson.entity.Event" />
+        <mapping class="jp.co.fitec.lesson.entity.Department" />
+        <mapping class="jp.co.fitec.lesson.entity.Employee" />
+        <mapping class="jp.co.fitec.lesson.entity.Category" />
+        <mapping class="jp.co.fitec.lesson.entity.Project" />
 		
     </session-factory>
 
