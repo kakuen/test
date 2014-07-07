@@ -5,11 +5,11 @@ import java.io.Serializable;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-
-
+import javax.persistence.ManyToMany;
 
 
 @Entity
@@ -24,10 +24,18 @@ public class Project implements Serializable{
 	private Date projectStart;
 	private Date projectEnd;
 	
+	@ManyToMany(mappedBy="projects")
+	private Set<Employee> employees;
 	
 	
 	
 
+	public Set<Employee> getEmployees() {
+		return employees;
+	}
+	public void setEmployees(Set<Employee> employees) {
+		this.employees = employees;
+	}
 	public Date getProjectStart() {
 		return projectStart;
 	}

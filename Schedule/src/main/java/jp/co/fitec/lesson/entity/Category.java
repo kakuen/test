@@ -1,9 +1,11 @@
 package jp.co.fitec.lesson.entity;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Category implements Serializable{
@@ -12,10 +14,32 @@ public class Category implements Serializable{
 	
 	@Id
 	private String categoryId;
-	
 	private String categoryName;
 	
+	public Category(){}
 	
+	
+	
+	public Category(String categoryId, String categoryName) {
+		super();
+		this.categoryId = categoryId;
+		this.categoryName = categoryName;
+	}
+
+
+
+	@OneToMany(targetEntity = Event.class,mappedBy = "category")
+	private Set<Event> events;
+	
+	
+
+	public Set<Event> getEvents() {
+		return events;
+	}
+
+	public void setEvents(Set<Event> events) {
+		this.events = events;
+	}
 
 	public String getCategoryName() {
 		return categoryName;
