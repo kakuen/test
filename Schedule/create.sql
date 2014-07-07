@@ -1,5 +1,5 @@
-create database Schedule_db;
-use Schedule_db;
+create database schedule_db;
+use schedule_db;
 
 
 create table department (

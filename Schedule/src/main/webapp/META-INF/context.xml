@@ -3,7 +3,7 @@
 			  auth="Container"
 	          type="javax.sql.DataSource"
 	          driverClassName="com.mysql.jdbc.Driver"
-	          url="jdbc:mysql://localhost/Schedule_db?autoReconnect=true"
+	          url="jdbc:mysql://localhost/schedule_db?autoReconnect=true"
 	          username="root"
 	          password="mysql"
 	/>
