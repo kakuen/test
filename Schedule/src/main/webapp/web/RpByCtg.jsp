@@ -15,20 +15,12 @@
 			ようこそ ${employee.name} さん <a href="">Logout</a>
 		</div>
 		
-		<form action="report.do" method="post" class="search-box">
-			時間帯: <input type="text" name="time" /> 
-			カテゴリ: <h:dropdown ds="${ds}" tbl="category" key="categoryId" value="categoryName" />
-			<input type="submit" value="Show" />
+		<form action="rpbyctg.do" method="post" class="search-box">
+			カテゴリ別:  <h:dropdown ds="${ds}" tbl="category" key="categoryId" value="categoryName" />
+			<a href ="RpByTm.jsp">時間別</a>
+			<input type="submit" value="Report" />
 		</form>
-		
-		<img src="http://chart.apis.google.com/chart?cht=p3&amp;
-			chd=t:35,30,25,10&amp;
-			chs=400x150&amp;
-			chl=Tokyo|Osaka|Nagoya|Hakata&amp;
-			chco=CC0000|CCCC00|00CC00|0000CC"
- 			width="400" height="150" alt="円グラフのサンプル"
- 			>
-		
+			
 	
 	<table border="0" cellspacing="1" cellpadding="0">
 		<tr>

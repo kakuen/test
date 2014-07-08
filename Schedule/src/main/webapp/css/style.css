@@ -15,8 +15,14 @@ a:hover {
 }
 
 h1 {
-	font-size: 43px;
-	color: #993300;
+	background: url(http://webdesignrecipes.com/wp-content/uploads/2012/07/heading.jpg) no-repeat 0 0;
+	min-height: 53px;
+	color: #000;
+	font-size: 20px;
+	padding-left: 18px;
+	margin-left: -57px;
+	text-shadow: 0 1px #fff;
+	line-height: 2;
 }
 
 h2 {

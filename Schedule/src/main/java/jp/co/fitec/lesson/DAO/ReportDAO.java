@@ -1,41 +1,34 @@
 package jp.co.fitec.lesson.DAO;
 
+import java.util.Date;
 import java.util.List;
 
-import org.apache.commons.lang.StringUtils;
-import org.hibernate.Criteria;
 import org.hibernate.Session;
-import org.hibernate.criterion.MatchMode;
 import org.hibernate.criterion.Restrictions;
 
-import jp.co.fitec.lesson.Servlet.Report;
 import jp.co.fitec.lesson.entity.Event;
-
-
 public class ReportDAO extends BaseDAO {
 
-
-	public List<Report> findAll() {
-		
-			return  findBy(null, null);
-
-	}
-
-	public List<Report>  findBy(String time, String categoryId) {
+	public List<Event> findByCategory(String categoryId) {
 		Session session = sessionFactory.getCurrentSession();
-		Criteria criteria = session.createCriteria(Event.class);
+		List<Event> eventList = session.createCriteria(Event.class)
+				.add(Restrictions.eq("categoryId", categoryId))
+				.list();
 		
-		if(StringUtils.isNotBlank(time)) {
-			criteria.add(Restrictions.like("isbn", time, MatchMode.ANYWHERE));
-		}
-		
-		
-		if(StringUtils.isNotBlank(categoryId)) {
-			criteria.add(Restrictions.eq("publisher.code", categoryId));
-		}
-		
-		return criteria.list();
+		return eventList;
 	}
+
+	public List<Event> findByTime(Date time,Date time2) {
+		
+		Session session = sessionFactory.getCurrentSession();
+		List<Event> eventList = session.createCriteria(Event.class)
+				.add(Restrictions.ge("eventStart", time2))
+				.add(Restrictions.le("eventEnd", time))
+				.list();
+		
+		return eventList;
+	}
+
 	
 
 

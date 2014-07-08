@@ -21,8 +21,13 @@
    -->
    
    	<context-param>
-		<param-name>/web/report.do</param-name>
-		<param-value>jp.co.fitec.lesson.Servlet.Report</param-value>
+		<param-name>/web/rpbytm.do</param-name>
+		<param-value>jp.co.fitec.lesson.Servlet.ReportByTime</param-value>
+	</context-param>
+	
+	 <context-param>
+		<param-name>/web/rpbyctg.do</param-name>
+		<param-value>jp.co.fitec.lesson.Servlet.ReportByCategory</param-value>
 	</context-param>
 	
 </web-app>
